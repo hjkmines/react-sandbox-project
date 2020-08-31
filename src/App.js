@@ -1,29 +1,25 @@
 import React, { Component } from 'react';
-import './App.css';
 
-export default class App extends Component {
-  state = {
-    students: [
-      'Tony', 
-      'Jess', 
-      'Mez', 
-      'Stacy'
-    ], 
-    currentUser: { name: 'Damon' }
-  }
+class App extends Component {
 
-  createCards = () => {
-    return this.state.students.map(student => {
-      return <Card name={student} />
-    })
-  }
-
-  render() {
-   <div className='App'> 
-    <Header image={this.state.currentUser.image} />
-    <ul>
-    {this.createCards()}
-    </ul>
-   </div> 
-  }
+state = {
+  characters: []
 }
+
+componentDidMount() {
+  fetch('https://rickandmortyapi.com/api/character/')
+    .then(response => response.json())                                               
+    .then(result => this.setState({
+      characters: result.results 
+    }))
+}
+
+render() {
+  return (
+    <div className='App'> 
+    </div>
+  )
+}
+}
+
+export default App; 
