@@ -5,7 +5,7 @@ export default function Card({character, setActiveCard, activeCard}) {
     const { image, name, species, gender } = character 
 
     return (
-        <div className='card' onClick={()=> setActiveCard(character)}>
+        <div className={ activeCard ? 'active-card' : 'card'} onClick={()=> setActiveCard(character)}>
             <h3>{name}</h3> 
             <img src={image} alt={name} />
             {activeCard ? (

@@ -9,7 +9,7 @@ export default function Container({characters}) {
     return (
         <div className='container'>
             <CardContainer characters={characters} setActiveCard={setActiveCard} /> 
-            { activeCard ? <Card character={activeCard} /> : null}
+            { activeCard ? <Card character={activeCard} activeCard={true} /> : null}
         </div>
     )
 }
