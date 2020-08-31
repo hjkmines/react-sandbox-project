@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CardContainer from './CardContainer'; 
 import Card from '../Cards/Card'; 
 import './Container.css'; 
 
 export default function Container({characters}) {
+    const { activeCard, setActiveCard } = useState(null)
+
     return (
         <div className='container'>
             <CardContainer characters={characters} /> 
-            <Card character={characters[0]} /> 
+            <Card character={characters[0]} setActiveCard={setActiveCard} /> 
         </div>
     )
 }
