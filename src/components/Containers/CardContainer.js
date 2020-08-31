@@ -5,7 +5,7 @@ export default function CardContainer({characters}) {
 
 const characterCards = characters.map(character => <Card character={character} /> )
     return (
-        <div>
+        <div className='card-container'>
             {characterCards}
         </div>
     )
