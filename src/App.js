@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Container from './components/Containers/Container'
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ componentDidMount() {
 render() {
   return (
     <div className='App'> 
+    {this.state.characters.length > 0 ? <Container characters={this.state.characters}/> : null}
     </div>
   )
 }
