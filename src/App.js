@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-   
-    </div>
-  );
-}
+export default class App extends Component {
+  state = {
+    students: [
+      'Tony', 
+      'Jess', 
+      'Mez', 
+      'Stacy'
+    ], 
+    currentUser: { name: 'Damon' }
+  }
 
-export default App;
+  createCards = () => {
+    return this.state.students.map(student => {
+      return <Card name={student} />
+    })
+  }
+
+  render() {
+   <div className='App'> 
+    <Header image={this.state.currentUser.image} />
+    <ul>
+    {this.createCards()}
+    </ul>
+   </div> 
+  }
+}
