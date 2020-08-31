@@ -4,12 +4,12 @@ import Card from '../Cards/Card';
 import './Container.css'; 
 
 export default function Container({characters}) {
-    const { activeCard, setActiveCard } = useState(null)
+    const [activeCard, setActiveCard] = useState(null)
 
     return (
         <div className='container'>
-            <CardContainer characters={characters} /> 
-            <Card character={characters[0]} setActiveCard={setActiveCard} /> 
+            <CardContainer characters={characters} setActiveCard={setActiveCard} /> 
+            { activeCard ? <Card character={activeCard} /> : null}
         </div>
     )
 }
