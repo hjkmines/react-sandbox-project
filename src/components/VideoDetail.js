@@ -6,8 +6,18 @@ const VideoDetail = ({ video }) => {
         return <div>Loading... </div>
     }
 
+    const vidoeoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
+
     return (
-        <div>{video.snippet.title}</div>
+        <div>
+          <div className='ui embed'>
+              <iframe src={vidoeoSrc} /> 
+          </div>
+          <div className='ui segment'>
+          <h4 className='ui header'>{video.snippet.title}</h4>
+          <p>{video.snippet.description}</p>
+          </div>  
+        </div>
     )
 }
 
