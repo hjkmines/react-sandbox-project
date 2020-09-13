@@ -2,8 +2,6 @@ import React from 'react'
 import Accordion from './Accordion'; 
 import Search from './Search'; 
 
-//en.wikipedia.org/w/api/php?
-
 const items = [
     {
         title: 'What is React?', 
