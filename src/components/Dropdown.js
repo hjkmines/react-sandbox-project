@@ -5,6 +5,9 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 
     useEffect(() => {
         document.body.addEventListener('click', () => {
+            if (ref.current.contains(event.target)) {
+                return; 
+            }
             setOpen(false)
         })
     }, [])
@@ -28,8 +31,13 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
         )
     })
 
+    console.log(ref.current)
+
     return (
-        <div className='ui form'>
+        <div 
+            ref={ref} 
+            className='ui form'
+        >
             <div className='field'>
                 <label className='label'>Select a color</label>
                 <div 
