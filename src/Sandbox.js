@@ -43,3 +43,42 @@ str1 = str1.replace(/[ ]{2,}/gi," ");
 str1 = str1.replace(/\n /,"\n");
 document.getElementById("noofwords").value = str1.split(' ').length;
 }
+
+Write a JavaScript function to check whether a given value is alpha numeric or not.
+
+function is_alphaNumeric(str)
+{
+ regexp = /^[A-Za-z0-9]+$/;
+  
+        if (regexp.test(str))
+          {
+            return true;
+          }
+        else
+          {
+            return false;
+          }
+}
+
+console.log(is_alphaNumeric("37828sad"));
+
+console.log(is_alphaNumeric("3243#$sew"));
+
+function is_timeString(str)
+{
+ regexp = /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])$/;
+  
+        if (regexp.test(str))
+          {
+            return true;
+          }
+        else
+          {
+            return false;
+          }
+}
+
+console.log(is_timeString("11:35:30"));
+
+console.log(is_timeString("90:90:90"));
+
